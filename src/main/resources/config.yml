@@ -1,0 +1,10 @@
+signTitle: '&6[&5warp&6]'
+
+prefix : '&6[&5WarpSigns&6] &r'
+
+teleportmsg : 'enabled'
+
+worlds :
+  - world
+  - world_nether
+  - world_the_end

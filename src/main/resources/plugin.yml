@@ -1,0 +1,11 @@
+name: WarpSigns
+version: ${project.version}
+main: me.mvez73.warpsigns.WarpSigns
+api-version: 1.13
+authors: [mvez73]
+description: Let players travel with signs
+commands:
+  warpsigns:
+    usage: /warpsigns
+    permission: warpsigns.admin
+    aliases: ws
