@@ -23,22 +23,32 @@ public class WarpsignsCommands implements CommandExecutor {
             sender.sendMessage("Only player can send commands.");
             return true;
         }
-        if (args.length == 0 && p.hasPermission("warpsigns.admin")) {
-            p.sendMessage(ChatColor.RED + "Usage: /warpsigns [reload/listworlds]");
+
+        if (args.length == 0 && p.hasPermission("warpsigns.*")) {
+            p.sendMessage(ChatColor.RED + "Usage: /warpsigns reload/listworlds");
             return true;
         }
 
-        if (args.length == 1 && args[0].equalsIgnoreCase("reload") && p.hasPermission("warpsigns.admin")){
+        if (args.length == 0 && p.hasPermission("warpsigns.admin")) {
+            p.sendMessage(ChatColor.RED + "Usage: /warpsigns reload");
+            return true;
+        }
+
+        if (args.length == 0 && p.hasPermission("warpsigns.use")) {
+            p.sendMessage(ChatColor.RED + "Usage: /warpsigns listworlds");
+            return true;
+        }
+
+        if (args.length == 1 && args[0].equalsIgnoreCase("reload") && p.hasPermission("warpsigns.admin") || p.hasPermission("warpsigns.*")){
             plugin.reloadConfig();
             WarpLocations.reload();
             p.sendMessage(ConfigManager.getPrefix() + "WarpSigns config reloaded");
         }
 
-        if (args.length == 1 && args[0].equalsIgnoreCase("listworlds") && p.hasPermission("warpsigns.admin")){
+        if (args.length == 1 && args[0].equalsIgnoreCase("listworlds") && p.hasPermission("warpsigns.use") || p.hasPermission("warpsigns.*")){
             for (String configWorld : plugin.getConfig().getStringList("worlds")){
                 p.sendMessage(ConfigManager.getPrefix() + "World available: " + configWorld);
             }
-
         }
         return true;
     }

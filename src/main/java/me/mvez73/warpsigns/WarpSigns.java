@@ -9,6 +9,9 @@ import me.mvez73.warpsigns.utils.WarpSignsTabCompletion;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;
+import java.util.logging.Level;
+
+import static org.bukkit.Bukkit.getLogger;
 
 public class WarpSigns extends JavaPlugin {
 
@@ -30,6 +33,7 @@ public class WarpSigns extends JavaPlugin {
         WarpLocations.save();
 
         System.out.println("[WarpSigns] loaded");
+        getLogger().log(Level.INFO, "[WarpSigns] loaded");
         Objects.requireNonNull(getCommand("warpsigns")).setExecutor(new WarpsignsCommands(this));
         Objects.requireNonNull(getCommand("warpsigns")).setTabCompleter(new WarpSignsTabCompletion());
         MetricsLite metrics = new MetricsLite(this, 8610);

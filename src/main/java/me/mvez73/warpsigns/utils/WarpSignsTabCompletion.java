@@ -12,7 +12,7 @@ public class WarpSignsTabCompletion implements TabCompleter {
 
     List<String> arguments = new ArrayList<>();
 
-    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String label, String[] args) {
+    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String label, @NotNull String[] args) {
         if (arguments.isEmpty()) {
             arguments.add("reload"); arguments.add("listworlds");
         }
