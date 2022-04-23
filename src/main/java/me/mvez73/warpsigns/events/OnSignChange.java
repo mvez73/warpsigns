@@ -28,7 +28,7 @@ public class OnSignChange implements Listener {
         String coloredLine = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(configLine));
         String stripedLine = ChatColor.stripColor(coloredLine);
         if(Objects.requireNonNull(e.getLine(0)).equalsIgnoreCase(stripedLine)){
-            if (p.hasPermission("warpsigns.use") || p.hasPermission("warpsigns.admin")) {
+            if (p.hasPermission("warpsigns.use") || p.hasPermission("warpsigns.admin") || p.hasPermission("warpsigns.*")) {
                 String warpName = e.getLine(1);
                 if (warpName != null && !warpName.equals("")) {
                     e.setLine(0, ChatColor.translateAlternateColorCodes('&', configLine));

@@ -35,7 +35,7 @@ public class OnSignBreak implements Listener {
                 return;
             }
 
-            if (p.hasPermission("warpsigns.use") || p.hasPermission("warpsigns.admin")) {
+            if (p.hasPermission("warpsigns.use") || p.hasPermission("warpsigns.admin") || p.hasPermission("warpsigns.*")) {
 
                 Location l = sign.getLocation();
 
@@ -64,7 +64,7 @@ public class OnSignBreak implements Listener {
                                     WarpLocations.save();
                                 }
                             }else{
-                                if (p.hasPermission("warpsigns.admin")){
+                                if (p.hasPermission("warpsigns.admin") || p.hasPermission("warpsigns.*")){
                                     if (WarpLocations.get().contains("warps." + uuidKey + "." + warpName + "." + ".world2")){
                                         p.sendMessage(ChatColor.RED + "[Admin]" + ChatColor.RESET + "Sign #1 deleted...");
                                         int signNumber = 1;
@@ -91,7 +91,7 @@ public class OnSignBreak implements Listener {
                                     WarpLocations.save();
                                 }
                             }else{
-                                if (p.hasPermission("warpsigns.admin")){
+                                if (p.hasPermission("warpsigns.admin") || p.hasPermission("warpsigns.*")){
                                     if (WarpLocations.get().contains("warps." + uuidKey + "." + warpName + "." + ".world1")){
                                         p.sendMessage(ChatColor.RED + "[Admin]" + ChatColor.RESET + "Sign #2 deleted...");
                                         int signNumber = 2;

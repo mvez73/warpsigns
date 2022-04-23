@@ -1,9 +1,17 @@
 name: WarpSigns
 version: ${project.version}
 main: me.mvez73.warpsigns.WarpSigns
-api-version: 1.13
+api-version: 1.18
 authors: [mvez73]
 description: Let players travel with signs
+permissions:
+  warpsigns.*:
+    description: All permissions.
+  warpsigns.admin:
+    description: Needed to reload plugin.
+  warpsigns.use:
+    description: Needed to use the plugin.
+
 commands:
   warpsigns:
     usage: /warpsigns

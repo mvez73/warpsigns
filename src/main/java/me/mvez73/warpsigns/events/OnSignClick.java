@@ -40,7 +40,7 @@ public class OnSignClick implements Listener {
                 return;
             }
 
-            if (p.hasPermission("warpsigns.use") || p.hasPermission("warpsigns.admin")) {
+            if (p.hasPermission("warpsigns.use") || p.hasPermission("warpsigns.admin") || p.hasPermission("warpsigns.*")) {
 
                 Location l = sign.getLocation();
 
@@ -80,7 +80,7 @@ public class OnSignClick implements Listener {
                                     p.sendMessage(ConfigManager.getPrefix() + ChatColor.RED + "Cannot teleport. This sign is not paired...");
                                 }
                             }else{
-                                if (p.hasPermission("warpsigns.admin")){
+                                if (p.hasPermission("warpsigns.admin") || p.hasPermission("warpsigns.*")){
                                     if (WarpLocations.get().contains("warps." + uuidKey + "." + warpName + "." + ".world2")){
                                         TeleportPlayer(p, world2, playerX2 , playerY2, playerZ2, playerYaw2, playerPitch2);
                                     }else{
@@ -98,7 +98,7 @@ public class OnSignClick implements Listener {
                                     p.sendMessage(ConfigManager.getPrefix() + ChatColor.RED + "Cannot teleport. This sign is not paired...");
                                 }
                             }else{
-                                if (p.hasPermission("warpsigns.admin")){
+                                if (p.hasPermission("warpsigns.admin") || p.hasPermission("warpsigns.*")){
                                     if (WarpLocations.get().contains("warps." + uuidKey + "." + warpName + "." + ".world1")){
                                         TeleportPlayer(p, world1, playerX1 , playerY1, playerZ1, playerYaw1, playerPitch1);
                                     }else{
